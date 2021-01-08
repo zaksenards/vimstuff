@@ -26,8 +26,8 @@ map <C-N> :NERDTreeToggle <cr>
 
 " Tabs 
 map <C-Q> :call CloseTab() <cr>
-map <C-Right> :tabp	<cr>
-map <C-Left> :tabn <cr>
+map <C-Right> :tabn <cr>
+map <C-Left> :tabp <cr>
 map <C-P> :tabnew <cr>
 
 " Terminal
