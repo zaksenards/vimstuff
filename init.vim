@@ -20,6 +20,7 @@ set tabstop=4
 set shiftwidth=4
 set inccommand=split
 set clipboard=unnamed
+set expandtab
 
 " NERDTree
 map <C-N> :NERDTreeToggle <cr>
