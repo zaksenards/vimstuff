@@ -13,7 +13,7 @@ function! ConfigFlags()
         set inccommand=split                        "" ??
     endif
 endfunction
-:ConfigFlags()
+:call ConfigFlags()
 
 
 "" Switch from buffers
@@ -48,4 +48,3 @@ endfunction
 if has('nvim')
     :cd $HOMEDRIVE/$HOMEPATH
 endif
-:ConfigFlags()
