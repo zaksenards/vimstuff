@@ -6,6 +6,7 @@ function! ConfigEnv()
     set expandtab                               "" ???
     set autoindent                              "" Follow previous identation
     set shiftwidth=4                            "" ??
+    set nowrap                                  "" Disable line wrapping
     
     if has('nvim')
         set clipboard=unnamed                   "" ??
@@ -20,27 +21,34 @@ endfunction
 
 function! ConfigKeymap()
     "" Switch from buffers
-    nnoremap <C-Z> :bprevious           <CR>
-    nnoremap <C-X> :bnext               <CR>
+    nnoremap <C-Z> :bprevious               <CR>
+    nnoremap <C-X> :bnext                   <CR>
 
     "" File explorer
-    nnoremap <C-B> :Vexplore 40         <CR>
-    nnoremap <S-B> :Explore             <CR>
+    nnoremap <C-B> :Vexplore 40             <CR>
+    nnoremap <S-B> :Explore                 <CR>
 
     "" Quit and save
-    nnoremap <C-Q> :bdelete             <CR>
-    nnoremap <C-S> :w                   <CR>
+    nnoremap <C-Q> :bdelete                 <CR>
+    nnoremap <C-S> :w                       <CR>
+
+    "" Window resize
+    noremap <A-UP> :resize -1      <CR>
+    noremap <A-LEFT> :vertical resize -1    <CR>
+    noremap <A-RIGHT> :vertical resize +1   <CR>
+    noremap <A-DOWN> :resize +1    <CR>
 
     "" line dragging
-    nnoremap <C-UP>     :m .-2          <CR>
-    nnoremap <C-DOWN>   :m .+1          <CR>
-    nnoremap <C-LEFT>   :<              <CR>
-    nnoremap <C-RIGHT>  :>              <CR>
+    noremap <C-UP>     :m .-2               <CR>
+    noremap <C-DOWN>   :m .+1               <CR>
+    noremap <C-LEFT>   :<                   <CR>
+    noremap <C-RIGHT>  :>                   <CR>
 
     "" Build a project 
-    nnoremap <F5>   :call BuildProject()   <CR>
-
-    "" Reload
+    nnoremap <F5>   :call BuildProject()    <CR>
+    
+    "" Reload keymap
+    nnoremap <F12>  :call ConfigKeymap()    <CR>
 endfunction
 
 :call ConfigEnv()
