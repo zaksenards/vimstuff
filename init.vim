@@ -49,6 +49,10 @@ function! ConfigKeymap()
     
     "" Reload keymap
     nnoremap <F12>  :call ConfigKeymap()    <CR>
+
+    "" Folding
+    nnoremap <C-K> v ]} zf <CR>
+    nnoremap <C-L> zd <CR>
 endfunction
 
 :call ConfigEnv()
